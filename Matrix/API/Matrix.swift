@@ -6,7 +6,7 @@
 //  Copyright © 2019 OstapTyvonovych. All rights reserved.
 //
 
-public struct Matrix<Element: Arithmetic>: Equatable {
+public struct Matrix<Element: FloatingPoint & ExpressibleByFloatLiteral>: Equatable {
     /// Underlying storage which contains matrix as a 2-dimensional array of values.
     public private(set) var storage: [[Element]]
     
@@ -178,7 +178,7 @@ public struct Matrix<Element: Arithmetic>: Equatable {
         for _ in 0..<size.rows {
             var line = [Element]()
             for _ in 0..<size.columns {
-                line.append(Element.zero)
+                line.append(0.0)
             }
             array.append(line)
         }
@@ -210,9 +210,9 @@ public struct Matrix<Element: Arithmetic>: Equatable {
             var line = [Element]()
             for j in 0..<order {
                 if i == j {
-                    line.append(Element.one)
+                    line.append(1.0)
                 } else {
-                    line.append(Element.zero)
+                    line.append(0.0)
                 }
             }
             array.append(line)
@@ -299,7 +299,7 @@ public struct Matrix<Element: Arithmetic>: Equatable {
         
         for i in 0..<left.size.rows {
             for j in 0..<right.size.columns {
-                var element = Element.zero
+                var element: Element = 0.0
                 for k in 0..<left.size.columns { // or 0..<right.size.rows, doesn't matter. They're equal by definition
                     element += left[i, k] * right[k, j]
                 }
@@ -347,7 +347,7 @@ public struct Matrix<Element: Arithmetic>: Equatable {
     // MARK: Prefix minus
     
     public static prefix func - (right: Matrix) -> Matrix {
-        return -Element.one * right
+        return -1.0 * right
     }
     
     // MARK: - Transposing of matrix
@@ -669,9 +669,9 @@ public struct Matrix<Element: Arithmetic>: Equatable {
             return storage[0][0]
         }
         
-        var result = Element.zero
+        var result: Element = 0.0
         for j in 0..<size.columns {
-            let sign = j.isOdd ? -Element.one : Element.one
+            let sign: Element = j.isOdd ? -1.0 : 1.0
             let cofactorExpansion = sign * unsafeMakeMatrixRemoving(rows: [0], columns: [j]).determinant()! // "Алгебраическое дополнение" on Russian
             result += storage[0][j] * cofactorExpansion
         }

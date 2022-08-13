@@ -11,9 +11,6 @@
 		527EECC72295EAFD0029D52C /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EC8F66226F0DE00078FB23 /* Matrix.framework */; };
 		52EC8F6B226F0DE00078FB23 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 52EC8F69226F0DE00078FB23 /* Matrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52EC8F72226F0DF30078FB23 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EC8F71226F0DF30078FB23 /* Matrix.swift */; };
-		52EC8F74226F0E010078FB23 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EC8F73226F0E010078FB23 /* Arithmetic.swift */; };
-		52EC8F77226F0E0C0078FB23 /* Int+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EC8F75226F0E0B0078FB23 /* Int+Arithmetic.swift */; };
-		52EC8F78226F0E0C0078FB23 /* Double+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EC8F76226F0E0C0078FB23 /* Double+Arithmetic.swift */; };
 		846C0BF028A83181002BE1E1 /* CharacterSet+matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C0BEF28A83181002BE1E1 /* CharacterSet+matrix.swift */; };
 		846C0BF228A83460002BE1E1 /* MatrixSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C0BF128A83460002BE1E1 /* MatrixSize.swift */; };
 		846C0BF828A837C5002BE1E1 /* Matrix+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C0BF728A837C5002BE1E1 /* Matrix+CustomStringConvertible.swift */; };
@@ -44,9 +41,6 @@
 		52EC8F69226F0DE00078FB23 /* Matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		52EC8F6A226F0DE00078FB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52EC8F71226F0DF30078FB23 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
-		52EC8F73226F0E010078FB23 /* Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
-		52EC8F75226F0E0B0078FB23 /* Int+Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Arithmetic.swift"; sourceTree = "<group>"; };
-		52EC8F76226F0E0C0078FB23 /* Double+Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Arithmetic.swift"; sourceTree = "<group>"; };
 		846C0BEF28A83181002BE1E1 /* CharacterSet+matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+matrix.swift"; sourceTree = "<group>"; };
 		846C0BF128A83460002BE1E1 /* MatrixSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSize.swift; sourceTree = "<group>"; };
 		846C0BF728A837C5002BE1E1 /* Matrix+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix+CustomStringConvertible.swift"; sourceTree = "<group>"; };
@@ -114,7 +108,6 @@
 				52EC8F6A226F0DE00078FB23 /* Info.plist */,
 				52EC8F79226F0E100078FB23 /* API */,
 				84B38B69252A03F1007D9226 /* Services */,
-				52EC8F7A226F0E170078FB23 /* Protocols */,
 				52EC8F7B226F0E200078FB23 /* Extensions */,
 			);
 			path = Matrix;
@@ -132,20 +125,10 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		52EC8F7A226F0E170078FB23 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				52EC8F73226F0E010078FB23 /* Arithmetic.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		52EC8F7B226F0E200078FB23 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				52EC8F75226F0E0B0078FB23 /* Int+Arithmetic.swift */,
 				846C0BFD28A8404B002BE1E1 /* Int+isOdd.swift */,
-				52EC8F76226F0E0C0078FB23 /* Double+Arithmetic.swift */,
 				846C0BEF28A83181002BE1E1 /* CharacterSet+matrix.swift */,
 			);
 			path = Extensions;
@@ -284,11 +267,8 @@
 				84B38B70252A0A1A007D9226 /* StringDescriptionService.swift in Sources */,
 				846C0BFE28A8404B002BE1E1 /* Int+isOdd.swift in Sources */,
 				846C0BF828A837C5002BE1E1 /* Matrix+CustomStringConvertible.swift in Sources */,
-				52EC8F78226F0E0C0078FB23 /* Double+Arithmetic.swift in Sources */,
 				846C0BF228A83460002BE1E1 /* MatrixSize.swift in Sources */,
 				846C0BF028A83181002BE1E1 /* CharacterSet+matrix.swift in Sources */,
-				52EC8F77226F0E0C0078FB23 /* Int+Arithmetic.swift in Sources */,
-				52EC8F74226F0E010078FB23 /* Arithmetic.swift in Sources */,
 				846C0BFC28A83C22002BE1E1 /* Matrix+Hashable.swift in Sources */,
 				84B38B6B252A041E007D9226 /* StringInitializerService.swift in Sources */,
 			);
