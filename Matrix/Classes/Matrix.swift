@@ -11,7 +11,9 @@ public typealias MatrixSize = (rows: Int, columns: Int)
 public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable, LosslessStringConvertible {
     
     private let stringDescriptionService = StringDescriptionService<Element>()
-    private var matrix: [[Element]]
+    
+    /// Underlying storage which contains matrix as a 2-dimensional array of values.
+    public private(set) var storage: [[Element]]
     
     /// The size of the matrix.
     ///
@@ -84,7 +86,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
                 return Element.zero
             }
             
-            return matrix[row][column]
+            return storage[row][column]
         }
         set {
             guard row >= 0 && row < size.rows else {
@@ -96,7 +98,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
                 return
             }
             
-            matrix[row][column] = newValue
+            storage[row][column] = newValue
         }
     }
     
@@ -152,7 +154,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
         
         size.rows = arrayOfRows.count
         size.columns = arrayOfRows[0].count
-        matrix = arrayOfRows
+        storage = arrayOfRows
     }
     
     /// Creates a matrix from a given string.
@@ -300,7 +302,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
             array.append(line)
         }
         
-        self.matrix = array
+        self.storage = array
         self.size = size
     }
     
@@ -335,7 +337,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
             array.append(line)
         }
         
-        self.matrix = array
+        self.storage = array
         self.size = (order, order)
     }
     
@@ -343,7 +345,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
     
     /// A textual representation of this matrix.
     public var description: String {
-        return stringDescriptionService.makeDescription(using: matrix, for: size)
+        return stringDescriptionService.makeDescription(using: storage, for: size)
     }
     
     // MARK: - 'Equatable' conformance
@@ -525,7 +527,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
         var result = Matrix<Element>(zeroMatrixOfSize: (size.columns, size.rows))
         for i in 0..<size.rows {
             for j in 0..<size.columns {
-                result[j, i] = matrix[i][j]
+                result[j, i] = storage[i][j]
             }
         }
         return result
@@ -578,7 +580,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
     ///     // Two matrices are equal
     ///     // (rows: 4, columns: 3)
     public mutating func transpose() {
-        let oldMatrix = matrix
+        let oldMatrix = storage
         var newMatrix = [[Element]]()
         
         for j in 0..<size.columns {
@@ -588,7 +590,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
             }
         }
         
-        matrix = newMatrix
+        storage = newMatrix
         size = (size.columns, size.rows)
         
         isTransposed = !isTransposed
@@ -673,7 +675,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
             for j in 0..<columns.count {
                 let chosenRow = rows[i]
                 let chosenColumn = columns[j]
-                result[i, j] = matrix[chosenRow][chosenColumn]
+                result[i, j] = storage[chosenRow][chosenColumn]
             }
         }
         
@@ -790,14 +792,14 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
         }
         
         if size.rows == 1 {
-            return matrix[0][0]
+            return storage[0][0]
         }
         
         var result = Element.zero
         for j in 0..<size.columns {
             let sign = j.isOdd ? -Element.one : Element.one
             let cofactorExpansion = sign * unsafeMakeMatrixRemoving(rows: [0], columns: [j]).determinant()! // "Алгебраическое дополнение" on Russian
-            result += matrix[0][j] * cofactorExpansion
+            result += storage[0][j] * cofactorExpansion
         }
         return result
     }
@@ -813,7 +815,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
             for j in 0..<columns.count {
                 let row = rows[i]
                 let column = columns[j]
-                result[i, j] = matrix[row][column]
+                result[i, j] = storage[row][column]
             }
         }
         
