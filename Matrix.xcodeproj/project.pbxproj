@@ -102,7 +102,7 @@
 			children = (
 				52EC8F69226F0DE00078FB23 /* Matrix.h */,
 				52EC8F6A226F0DE00078FB23 /* Info.plist */,
-				52EC8F79226F0E100078FB23 /* Classes */,
+				52EC8F79226F0E100078FB23 /* API */,
 				84B38B69252A03F1007D9226 /* Services */,
 				52EC8F7A226F0E170078FB23 /* Protocols */,
 				52EC8F7B226F0E200078FB23 /* Extensions */,
@@ -110,12 +110,12 @@
 			path = Matrix;
 			sourceTree = "<group>";
 		};
-		52EC8F79226F0E100078FB23 /* Classes */ = {
+		52EC8F79226F0E100078FB23 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				52EC8F71226F0DF30078FB23 /* Matrix.swift */,
 			);
-			path = Classes;
+			path = API;
 			sourceTree = "<group>";
 		};
 		52EC8F7A226F0E170078FB23 /* Protocols */ = {
