@@ -9,9 +9,3 @@
 extension Int: Arithmetic {
     public static let one = 1
 }
-
-extension Int {
-    var isOdd: Bool {
-        return (self & 1) == 1
-    }
-}
