@@ -39,7 +39,7 @@ struct StringInitializerService<Element: LosslessStringConvertible> {
     
     private func haveForeignCharacters(string: String) -> Bool {
         let setOfString = CharacterSet(charactersIn: string)
-        let setOfPermittedCharacters = CharacterSet.matrixCharacters
+        let setOfPermittedCharacters = CharacterSet.matrix
         let setOfForeignCharacters = setOfString.subtracting(setOfPermittedCharacters)
         
         return !setOfForeignCharacters.isEmpty
@@ -75,10 +75,4 @@ struct StringInitializerService<Element: LosslessStringConvertible> {
             return result
         }
     }
-}
-
-// MARK: - Matrix literal allowed characters
-
-fileprivate extension CharacterSet {
-    static var matrixCharacters = CharacterSet(charactersIn: "-0123456789.\n\t ")
 }
