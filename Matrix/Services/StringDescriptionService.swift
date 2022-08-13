@@ -6,7 +6,7 @@
 //  Copyright © 2020 OstapTyvonovych. All rights reserved.
 //
 
-struct StringDescriptionService<Element: LosslessStringConvertible> {
+struct StringDescriptionService<Element: CustomStringConvertible> {
     
     // MARK: - Public method
     
