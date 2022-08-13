@@ -6,8 +6,6 @@
 //  Copyright © 2019 OstapTyvonovych. All rights reserved.
 //
 
-public typealias MatrixSize = (rows: Int, columns: Int)
-
 public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable, LosslessStringConvertible {
     
     private let stringDescriptionService = StringDescriptionService<Element>()
@@ -26,7 +24,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
     ///     print(matrix.size)
     ///
     ///     // Prints "(rows: 2, columns: 3)"
-    public private(set) var size: MatrixSize
+    public private(set) var size: Size
     
     /// A Boolean value indicating whether the matrix was transposed. Default value is `false`.
     ///
@@ -291,7 +289,7 @@ public struct Matrix<Element: Arithmetic & LosslessStringConvertible>: Equatable
     ///
     /// - Parameters:
     ///     - size: A tuple where the first element is number of rows and the second one is number of columns.
-    public init(zeroMatrixOfSize size: MatrixSize) {
+    public init(zeroMatrixOfSize size: Size) {
         var array = [[Element]]()
         
         for _ in 0..<size.rows {

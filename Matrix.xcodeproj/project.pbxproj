@@ -15,6 +15,7 @@
 		52EC8F77226F0E0C0078FB23 /* Int+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EC8F75226F0E0B0078FB23 /* Int+Arithmetic.swift */; };
 		52EC8F78226F0E0C0078FB23 /* Double+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EC8F76226F0E0C0078FB23 /* Double+Arithmetic.swift */; };
 		846C0BF028A83181002BE1E1 /* CharacterSet+matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C0BEF28A83181002BE1E1 /* CharacterSet+matrix.swift */; };
+		846C0BF228A83460002BE1E1 /* MatrixSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C0BF128A83460002BE1E1 /* MatrixSize.swift */; };
 		84B38B6B252A041E007D9226 /* StringInitializerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B38B6A252A041E007D9226 /* StringInitializerService.swift */; };
 		84B38B70252A0A1A007D9226 /* StringDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B38B6F252A0A1A007D9226 /* StringDescriptionService.swift */; };
 		84FBE4D925956BA200B35DC1 /* ArrayInitTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBE4D825956BA200B35DC1 /* ArrayInitTestSuite.swift */; };
@@ -43,6 +44,7 @@
 		52EC8F75226F0E0B0078FB23 /* Int+Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Arithmetic.swift"; sourceTree = "<group>"; };
 		52EC8F76226F0E0C0078FB23 /* Double+Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Arithmetic.swift"; sourceTree = "<group>"; };
 		846C0BEF28A83181002BE1E1 /* CharacterSet+matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+matrix.swift"; sourceTree = "<group>"; };
+		846C0BF128A83460002BE1E1 /* MatrixSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSize.swift; sourceTree = "<group>"; };
 		84B38B6A252A041E007D9226 /* StringInitializerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInitializerService.swift; sourceTree = "<group>"; };
 		84B38B6F252A0A1A007D9226 /* StringDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDescriptionService.swift; sourceTree = "<group>"; };
 		84FBE4D825956BA200B35DC1 /* ArrayInitTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayInitTestSuite.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				52EC8F71226F0DF30078FB23 /* Matrix.swift */,
+				846C0BF128A83460002BE1E1 /* MatrixSize.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				52EC8F72226F0DF30078FB23 /* Matrix.swift in Sources */,
 				84B38B70252A0A1A007D9226 /* StringDescriptionService.swift in Sources */,
 				52EC8F78226F0E0C0078FB23 /* Double+Arithmetic.swift in Sources */,
+				846C0BF228A83460002BE1E1 /* MatrixSize.swift in Sources */,
 				846C0BF028A83181002BE1E1 /* CharacterSet+matrix.swift in Sources */,
 				52EC8F77226F0E0C0078FB23 /* Int+Arithmetic.swift in Sources */,
 				52EC8F74226F0E010078FB23 /* Arithmetic.swift in Sources */,
