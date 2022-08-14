@@ -22,6 +22,8 @@
 		84C4772328A8FB1200478B08 /* SequenceTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4772228A8FB1200478B08 /* SequenceTestSuite.swift */; };
 		84C956E728A98B2900842CCF /* MatrixIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C956E628A98B2900842CCF /* MatrixIterator.swift */; };
 		84C956EB28A98B5600842CCF /* Matrix+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C956EA28A98B5600842CCF /* Matrix+Sequence.swift */; };
+		84C956ED28A9953800842CCF /* Matrix+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C956EC28A9953800842CCF /* Matrix+Collection.swift */; };
+		84C956EF28A9957600842CCF /* CollectionTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C956EE28A9957600842CCF /* CollectionTestSuite.swift */; };
 		84FBE4D925956BA200B35DC1 /* ArrayInitTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBE4D825956BA200B35DC1 /* ArrayInitTestSuite.swift */; };
 		84FBE4DD25956BC200B35DC1 /* LosslessStringConvertibleTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBE4DC25956BC200B35DC1 /* LosslessStringConvertibleTestSuite.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		84C4772228A8FB1200478B08 /* SequenceTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTestSuite.swift; sourceTree = "<group>"; };
 		84C956E628A98B2900842CCF /* MatrixIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixIterator.swift; sourceTree = "<group>"; };
 		84C956EA28A98B5600842CCF /* Matrix+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix+Sequence.swift"; sourceTree = "<group>"; };
+		84C956EC28A9953800842CCF /* Matrix+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix+Collection.swift"; sourceTree = "<group>"; };
+		84C956EE28A9957600842CCF /* CollectionTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTestSuite.swift; sourceTree = "<group>"; };
 		84FBE4D825956BA200B35DC1 /* ArrayInitTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayInitTestSuite.swift; sourceTree = "<group>"; };
 		84FBE4DC25956BC200B35DC1 /* LosslessStringConvertibleTestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosslessStringConvertibleTestSuite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +90,7 @@
 				84FBE4D825956BA200B35DC1 /* ArrayInitTestSuite.swift */,
 				84FBE4DC25956BC200B35DC1 /* LosslessStringConvertibleTestSuite.swift */,
 				84C4772228A8FB1200478B08 /* SequenceTestSuite.swift */,
+				84C956EE28A9957600842CCF /* CollectionTestSuite.swift */,
 			);
 			path = MatrixTests;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				846C0BF928A837E2002BE1E1 /* Matrix+LosslessStringConvertible.swift */,
 				846C0BFB28A83C22002BE1E1 /* Matrix+Hashable.swift */,
 				84C956EA28A98B5600842CCF /* Matrix+Sequence.swift */,
+				84C956EC28A9953800842CCF /* Matrix+Collection.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FBE4DD25956BC200B35DC1 /* LosslessStringConvertibleTestSuite.swift in Sources */,
+				84C956EF28A9957600842CCF /* CollectionTestSuite.swift in Sources */,
 				84C4772328A8FB1200478B08 /* SequenceTestSuite.swift in Sources */,
 				84FBE4D925956BA200B35DC1 /* ArrayInitTestSuite.swift in Sources */,
 				527EECC52295EAFD0029D52C /* MainTestSuite.swift in Sources */,
@@ -278,6 +285,7 @@
 				84B38B70252A0A1A007D9226 /* StringDescriptionService.swift in Sources */,
 				846C0BFE28A8404B002BE1E1 /* Int+isOdd.swift in Sources */,
 				84C956E728A98B2900842CCF /* MatrixIterator.swift in Sources */,
+				84C956ED28A9953800842CCF /* Matrix+Collection.swift in Sources */,
 				846C0BF828A837C5002BE1E1 /* Matrix+CustomStringConvertible.swift in Sources */,
 				846C0BF228A83460002BE1E1 /* MatrixSize.swift in Sources */,
 				846C0BF028A83181002BE1E1 /* CharacterSet+matrix.swift in Sources */,
