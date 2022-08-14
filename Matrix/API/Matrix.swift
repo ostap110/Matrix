@@ -73,24 +73,20 @@ public struct Matrix<Element: FloatingPoint>: Equatable {
     public subscript(_ row: Int, _ column: Int) -> Element {
         get {
             guard row >= 0 && row < size.rows else {
-                print("Subscript: Row index out of range")
-                return Element.zero
+                fatalError("Row index out of range")
             }
             guard column >= 0 && column < size.columns else {
-                print("Subscript: Column index out of range")
-                return Element.zero
+                fatalError("Column index out of range")
             }
             
             return storage[row][column]
         }
         set {
             guard row >= 0 && row < size.rows else {
-                print("Subscript: Row index out of range")
-                return
+                fatalError("Row index out of range")
             }
             guard column >= 0 && column < size.columns else {
-                print("Subscript: Column index out of range")
-                return
+                fatalError("Column index out of range")
             }
             
             storage[row][column] = newValue
