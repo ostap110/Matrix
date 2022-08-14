@@ -73,20 +73,20 @@ public struct Matrix<Element: Numeric>: Equatable {
     public subscript(_ row: Int, _ column: Int) -> Element {
         get {
             guard row >= 0 && row < size.rows else {
-                fatalError("Row index out of range")
+                fatalError(.rowIndexOutOfRange())
             }
             guard column >= 0 && column < size.columns else {
-                fatalError("Column index out of range")
+                fatalError(.columnIndexOutOfRange())
             }
             
             return storage[row][column]
         }
         set {
             guard row >= 0 && row < size.rows else {
-                fatalError("Row index out of range")
+                fatalError(.rowIndexOutOfRange())
             }
             guard column >= 0 && column < size.columns else {
-                fatalError("Column index out of range")
+                fatalError(.columnIndexOutOfRange())
             }
             
             storage[row][column] = newValue
@@ -321,13 +321,7 @@ public struct Matrix<Element: Numeric>: Equatable {
     }
     
     public static func * (left: Matrix, right: Element) -> Matrix {
-        var result = Matrix<Element>(zeroMatrixOfSize: left.size)
-        for i in 0..<left.size.rows {
-            for j in 0..<left.size.columns {
-                result[i, j] += left[i, j] * right
-            }
-        }
-        return result
+        return right * left
     }
     
     public static func *= (left: inout Matrix, right: Element) {
@@ -528,13 +522,13 @@ public struct Matrix<Element: Numeric>: Equatable {
         
         for number in rows {
             guard number >= 0 && number < size.rows else {
-                print("makeMatrixChoosing(rows:columns:): Row index out of range")
+                print(String.rowIndexOutOfRange())
                 return nil
             }
         }
         for number in columns {
             guard number >= 0 && number < size.columns else {
-                print("makeMatrixChoosing(rows:columns:): Column index out of range")
+                print(String.rowIndexOutOfRange())
                 return nil
             }
         }
@@ -614,13 +608,13 @@ public struct Matrix<Element: Numeric>: Equatable {
         
         for number in crossedOffRows {
             guard number >= 0 && number < size.rows else {
-                print("makeMatrixRemoving(rows:columns:): Row index out of range")
+                print(String.rowIndexOutOfRange())
                 return nil
             }
         }
         for number in crossedOffColumns {
             guard number >= 0 && number < size.columns else {
-                print("makeMatrixRemoving(rows:columns:): Column index out of range")
+                print(String.columnIndexOutOfRange())
                 return nil
             }
         }
@@ -814,5 +808,14 @@ public struct Matrix<Element: Numeric>: Equatable {
     ///     // false
     public var isAntisymmetric: Bool {
         return isSquare && -self.transposed() == self
+    }
+}
+
+fileprivate extension String {
+    static func rowIndexOutOfRange(_ function: StaticString = #function) -> String {
+        return "\(function): Row index out of range"
+    }
+    static func columnIndexOutOfRange(_ function: StaticString = #function) -> String {
+        return "\(function): Column index out of range"
     }
 }
