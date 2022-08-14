@@ -668,7 +668,7 @@ public struct Matrix<Element: Numeric>: Equatable {
         var result: Element = 0
         for j in 0..<size.columns {
             let sign: Element = j.isOdd ? -1 : 1
-            let cofactorExpansion = sign * unsafeMakeMatrixRemoving(rows: [0], columns: [j]).determinant()! // "Алгебраическое дополнение" on Russian
+            let cofactorExpansion = sign * unsafeMakeMatrixRemoving(rows: [0], columns: [j]).determinant()!
             result += storage[0][j] * cofactorExpansion
         }
         return result
