@@ -6,7 +6,7 @@
 //  Copyright © 2019 OstapTyvonovych. All rights reserved.
 //
 
-public struct Matrix<Element: FloatingPoint>: Equatable {
+public struct Matrix<Element: Numeric>: Equatable {
     /// Underlying storage which contains matrix as a 2-dimensional array of values.
     public private(set) var storage: [[Element]]
     
